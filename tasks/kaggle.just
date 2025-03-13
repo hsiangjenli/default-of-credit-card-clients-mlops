@@ -11,4 +11,9 @@ kaggle-download:
 # unzip the dataset
 [group('kaggle')]
 kaggle-unzip:
-    unzip -o $(pwd)/data/default-of-credit-card-clients-dataset.zip -d $(pwd)/data
+    unzip -o $(pwd)/data/default-of-credit-card-clients-dataset.zip -d $(pwd)/data/raw
+    rm -f $(pwd)/data/default-of-credit-card-clients-dataset.zip
+
+[group('kaggle')]
+kaggle-clean:
+    rm -rf $(pwd)/data/*

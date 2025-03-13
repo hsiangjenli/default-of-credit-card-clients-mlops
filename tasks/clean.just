@@ -1,6 +1,6 @@
 # run clean tasks
 [group('clean')]
-clean: clean-build clean-cache clean-constraints clean-coverage clean-docs clean-mlruns clean-mypy clean-outputs clean-pytest clean-python clean-requirements clean-ruff
+clean: clean-build clean-cache clean-constraints clean-coverage clean-docs clean-mlruns clean-mypy clean-outputs-images clean-pytest clean-python clean-requirements clean-ruff
 
 # clean build folders
 [group('clean')]
@@ -38,11 +38,6 @@ clean-mlruns:
 clean-mypy:
     rm -rf .mypy_cache/
 
-# clean outputs folder
-[group('clean')]
-clean-outputs:
-    rm -rf outputs/*
-
 # clean pytest cache
 [group('clean')]
 clean-pytest:
@@ -69,3 +64,8 @@ clean-ruff:
 [group('clean')]
 clean-venv:
     rm -rf .venv/
+
+# clean outputs/images folder
+[group('clean')]
+clean-outputs-images:
+    rm -rf outputs/images/*
