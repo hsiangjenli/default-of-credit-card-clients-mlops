@@ -14,7 +14,7 @@ keywords = ["mlops", "python", "package"]
 requires-python = ">=3.11"
 dependencies = [
     "hatchling>=1.27.0",
-    "mlflow>=2.20.3",
+    "mlflow>=2.20.3", "pandas~=2.2.3", "numpy~=2.2.3", "matplotlib~=3.10.1", "seaborn~=0.13.2",
 ]
 
 # LINKS
@@ -49,6 +49,9 @@ dev = ["rust-just>=1.39.0"]
 doc = ["pdoc>=15.0.1"]
 notebook = ["ipykernel>=6.29.5", "nbformat>=5.10.4"]
 
+[tool]
+rye = { dev-dependencies = ["dvc~=3.59.1"] }
+
 # TOOLS
 
 [tool.uv]
@@ -71,7 +74,7 @@ omit = ["__main__.py"]
 
 [tool.mypy]
 pretty = true
-python_version = "3.13"
+python_version = "3.11.3"
 check_untyped_defs = true
 ignore_missing_imports = true
 
@@ -93,6 +96,9 @@ convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*.py" = ["D100", "D103"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dcc"]
 
 # SYSTEMS
 
