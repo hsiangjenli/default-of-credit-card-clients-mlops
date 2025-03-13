@@ -1,3 +1,7 @@
+# Custom
+*.csv
+*.zip
+
 # https://git-scm.com/docs/gitignore
 
 # Build
