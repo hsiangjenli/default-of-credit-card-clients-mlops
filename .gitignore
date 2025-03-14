@@ -27,7 +27,7 @@
 # Project
 /docs/*
 /mlruns/*
-/outputs/*
+# /outputs/*
 !**/.gitkeep
 
 # Python
