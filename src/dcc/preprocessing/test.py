@@ -4,6 +4,7 @@ from sklearn.preprocessing import StandardScaler
 import seaborn as sns
 
 df = pd.read_csv("data/raw/UCI_Credit_Card.csv")
+df_y = df["default.payment.next.month"]
 df = df.drop(columns=["ID", "default.payment.next.month"])  # Drop target column
 
 # Category columns
@@ -51,6 +52,9 @@ df_cat_dummies = pd.get_dummies(df, columns=cat_cols, drop_first=True)
 
 # Combine numerical and dummies columns
 df = pd.concat([df[num_cols], df_cat_dummies], axis=1)
+
+# Combine preprocessed data with target column
+df = pd.concat([df, df_y], axis=1)
 
 # Save preprocessed data
 df.to_csv("data/processed/UCI_Credit_Card.csv", index=False)
