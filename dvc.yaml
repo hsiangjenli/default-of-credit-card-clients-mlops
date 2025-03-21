@@ -1,7 +1,9 @@
 params:
 - train/params.yaml
-metrics:
-- dvc/train/metrics.json
 plots:
-- dvc/train/plots/metrics:
+- plots/plots/images
+- dvc/plots/images
+- dvc/test/plots/metrics:
     x: step
+metrics:
+- dvc/test/metrics.json

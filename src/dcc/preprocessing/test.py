@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 import seaborn as sns
+from dvclive import Live
 
 df = pd.read_csv("data/raw/UCI_Credit_Card.csv")
 df_y = df["default.payment.next.month"]
@@ -25,22 +26,25 @@ df[cat_cols] = df[cat_cols].astype("category")
 
 # Describe numerical columns
 num_describe = df[num_cols].describe()
-num_describe.to_csv("outputs/numerical_describe.csv")
 
 print(f"Numerical columns: {num_cols}")
 
-# Visualize categorical columns
-for col in cat_cols:
-    df[col].value_counts().sort_index().to_frame().plot(kind="bar")
-    plt.savefig(f"outputs/images/{col}_countplot.png")
 
-# Visualize numerical columns
-for col in num_cols:  # 選三個關鍵變數
-    plt.figure(figsize=(12, 6))
-    sns.histplot(df[col], bins=50, kde=True)
-    plt.title(col)
-    plt.savefig(f"outputs/images/{col}_histplot.png")
-    plt.close()
+with Live(dir="dvc") as live:
+    # Visualize categorical columns
+    for col in cat_cols:
+        fig = plt.figure(figsize=(12, 6))
+        df[col].value_counts().sort_index().to_frame().plot(kind="bar")
+        live.log_image(f"{col}_countplot.png", fig)
+        plt.close()
+
+    # Visualize numerical columns
+    for col in num_cols:  # 選三個關鍵變數
+        fig = plt.figure(figsize=(12, 6))
+        sns.histplot(df[col], bins=50, kde=True)
+        plt.title(col)
+        live.log_image(f"{col}_histplot.png", fig)
+        plt.close()
 
 # Standardize numerical columns
 ss = StandardScaler()
