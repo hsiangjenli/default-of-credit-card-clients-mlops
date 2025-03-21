@@ -68,4 +68,4 @@ clean-venv:
 # clean outputs/images folder
 [group('clean')]
 clean-outputs-images:
-    rm -rf outputs/images/*
+    rm -rf dvc/plots/images/*

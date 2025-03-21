@@ -33,7 +33,7 @@ df[cat_cols] = df[cat_cols].astype("category")
 # Visualize categorical columns
 for col in cat_cols:
     df[col].value_counts().sort_index().to_frame().plot(kind="bar")
-    plt.savefig(f"outputs/images/{col}_countplot.png")
+    plt.savefig(f"dvc/plots/images/{col}_countplot.png")
 ```
 
 ```python
@@ -42,7 +42,7 @@ for col in num_cols:  # 選三個關鍵變數
     plt.figure(figsize=(12, 6))
     sns.histplot(df[col], bins=50, kde=True)
     plt.title(col)
-    plt.savefig(f"outputs/images/{col}_histplot.png")
+    plt.savefig(f"dvc/plots/images/{col}_histplot.png")
     plt.close()
 ```
 
@@ -65,23 +65,23 @@ df_cat_dummies = pd.get_dummies(df, columns=cat_cols, drop_first=True)
 # Category Visualization
 |||
 |---|---|
-| ![](outputs/images/EDUCATION_countplot.png) | ![](outputs/images/MARRIAGE_countplot.png) |
-| ![](outputs/images/SEX_countplot.png) | ![](outputs/images/PAY_0_countplot.png) |
-| ![](outputs/images/PAY_2_countplot.png) | ![](outputs/images/PAY_3_countplot.png) |
-| ![](outputs/images/PAY_3_countplot.png) | ![](outputs/images/PAY_4_countplot.png) |
-| ![](outputs/images/PAY_5_countplot.png) | ![](outputs/images/PAY_6_countplot.png) |
+| ![](dvc/plots/images/EDUCATION_countplot.png) | ![](dvc/plots/images/MARRIAGE_countplot.png) |
+| ![](dvc/plots/images/SEX_countplot.png) | ![](dvc/plots/images/PAY_0_countplot.png) |
+| ![](dvc/plots/images/PAY_2_countplot.png) | ![](dvc/plots/images/PAY_3_countplot.png) |
+| ![](dvc/plots/images/PAY_3_countplot.png) | ![](dvc/plots/images/PAY_4_countplot.png) |
+| ![](dvc/plots/images/PAY_5_countplot.png) | ![](dvc/plots/images/PAY_6_countplot.png) |
 
 # Numerical Visualization
 
 |||
 |---|---|
-| ![](outputs/images/AGE_histplot.png) | ![](outputs/images/LIMIT_BAL_histplot.png) |
-| ![](outputs/images/BILL_AMT1_histplot.png) | ![](outputs/images/BILL_AMT2_histplot.png) |
-| ![](outputs/images/BILL_AMT3_histplot.png) | ![](outputs/images/BILL_AMT4_histplot.png) |
-| ![](outputs/images/BILL_AMT5_histplot.png) | ![](outputs/images/BILL_AMT6_histplot.png) |
-| ![](outputs/images/PAY_AMT1_histplot.png) | ![](outputs/images/PAY_AMT2_histplot.png) |
-| ![](outputs/images/PAY_AMT3_histplot.png) | ![](outputs/images/PAY_AMT4_histplot.png) |
-| ![](outputs/images/PAY_AMT5_histplot.png) | ![](outputs/images/PAY_AMT6_histplot.png) |
+| ![](dvc/plots/images/AGE_histplot.png) | ![](dvc/plots/images/LIMIT_BAL_histplot.png) |
+| ![](dvc/plots/images/BILL_AMT1_histplot.png) | ![](dvc/plots/images/BILL_AMT2_histplot.png) |
+| ![](dvc/plots/images/BILL_AMT3_histplot.png) | ![](dvc/plots/images/BILL_AMT4_histplot.png) |
+| ![](dvc/plots/images/BILL_AMT5_histplot.png) | ![](dvc/plots/images/BILL_AMT6_histplot.png) |
+| ![](dvc/plots/images/PAY_AMT1_histplot.png) | ![](dvc/plots/images/PAY_AMT2_histplot.png) |
+| ![](dvc/plots/images/PAY_AMT3_histplot.png) | ![](dvc/plots/images/PAY_AMT4_histplot.png) |
+| ![](dvc/plots/images/PAY_AMT5_histplot.png) | ![](dvc/plots/images/PAY_AMT6_histplot.png) |
 
 <!-- Category columns: ['SEX', 'EDUCATION', 'MARRIAGE', 'PAY_0', 'PAY_2', 'PAY_3', 'PAY_4', 'PAY_5', 'PAY_6']
 Numerical columns: ['LIMIT_BAL', 'AGE', 'BILL_AMT1', 'BILL_AMT2', 'BILL_AMT3', 'BILL_AMT4', 'BILL_AMT5', 'BILL_AMT6', 'PAY_AMT1', 'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6'] -->

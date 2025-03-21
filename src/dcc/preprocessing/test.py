@@ -52,7 +52,9 @@ df[num_cols] = ss.fit_transform(df[num_cols])
 
 # Transform categorical into dummies columns
 # For later use in the model
-df_cat_dummies = pd.get_dummies(df, columns=cat_cols, drop_first=True)
+df_cat_dummies = pd.get_dummies(
+    df, columns=cat_cols, drop_first=True, prefix_sep="_DV", dtype="int64"
+)
 
 # Combine numerical and dummies columns
 df = pd.concat([df[num_cols], df_cat_dummies], axis=1)
