@@ -21,6 +21,10 @@ def evaluate(y_true, y_pred):
 if __name__ == "__main__":
     from sklearn.linear_model import LogisticRegression
     from dvclive import Live
+    from sklearn.metrics import confusion_matrix
+    from matplotlib import pyplot as plt
+    import seaborn as sns
+    import pandas as pd
 
     train_x, train_y, test_x, test_y = load_data()
 
@@ -41,3 +45,11 @@ if __name__ == "__main__":
         live.log_metric("f1", f1)
         live.log_metric("recall", recall)
         live.log_metric("precision", precision)
+
+        # Generate confusion matrix
+        cm = confusion_matrix(y_true=test_y, y_pred=y_pred)
+        fig = plt.figure()
+        sns.heatmap(cm, annot=True, fmt="d", cmap="Reds", cbar=False, square=True)
+        plt.xlabel("Predicted")
+        plt.ylabel("Actual")
+        live.log_image("confusion_matrix.png", fig)

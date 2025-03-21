@@ -11,6 +11,7 @@ plots:
 - dvc/test-delay-num/plots/images
 - dvc/test/plots/metrics:
     x: step
+- dvc/test/plots/images
 metrics:
 - dvc/test-delay-only/metrics.json
 - dvc/test-delay-num/metrics.json
