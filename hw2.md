@@ -1,4 +1,4 @@
-# Homework 1
+# Homework 2
 
 > 資料集切成 train test 8:2  
 > 這次只使用 LogisticRegression 來做訓練，分別使用不同欄位的資料（不做任何改動、只放入過去曾經 delay 付款的欄位、delay 付款的虛擬變數欄位結合其它數值欄位產生新的欄位）
