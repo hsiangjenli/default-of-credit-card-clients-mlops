@@ -25,6 +25,7 @@ if __name__ == "__main__":
     from matplotlib import pyplot as plt
     import seaborn as sns
     import pandas as pd
+    import joblib
 
     train_x, train_y, test_x, test_y = load_data()
 
@@ -36,8 +37,14 @@ if __name__ == "__main__":
         model = LogisticRegression()
         model.fit(train_x, train_y)
 
+        model_path = f"{live.dir}/model.pkl"
+        joblib.dump(model, model_path)
+        joblib.dump(x_cols, f"{live.dir}/x_cols.pkl")
+
     # Test model
     with Live(dir="dvc/test") as live:
+        model = joblib.load(model_path)
+
         y_pred = model.predict(test_x)
         accuracy, f1, recall, precision = evaluate(test_y, y_pred)
 

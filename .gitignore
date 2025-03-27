@@ -1,6 +1,7 @@
 # Custom
 *.csv
 *.zip
+*.pkl
 
 # https://git-scm.com/docs/gitignore
 

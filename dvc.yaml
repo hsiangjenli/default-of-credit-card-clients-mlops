@@ -12,6 +12,28 @@ plots:
 - dvc/test-delay-num/plots/metrics:
     x: step
 - dvc/test-delay-num/plots/images
+artifacts:
+  x_cols:
+    path: x_cols
+    type: "Index(['LIMIT_BAL', 'AGE', 'BILL_AMT1', 'BILL_AMT2', 'BILL_AMT3', 'BILL_AMT4',\n\
+      \       'BILL_AMT5', 'BILL_AMT6', 'PAY_AMT1', 'PAY_AMT2', 'PAY_AMT3',\n    \
+      \   'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6', 'LIMIT_BAL.1', 'AGE.1',\n       'BILL_AMT1.1',
+      'BILL_AMT2.1', 'BILL_AMT3.1', 'BILL_AMT4.1',\n       'BILL_AMT5.1', 'BILL_AMT6.1',
+      'PAY_AMT1.1', 'PAY_AMT2.1', 'PAY_AMT3.1',\n       'PAY_AMT4.1', 'PAY_AMT5.1',
+      'PAY_AMT6.1', 'SEX_DV2', 'EDUCATION_DV1',\n       'EDUCATION_DV2', 'EDUCATION_DV3',
+      'EDUCATION_DV4', 'EDUCATION_DV5',\n       'EDUCATION_DV6', 'MARRIAGE_DV1', 'MARRIAGE_DV2',
+      'MARRIAGE_DV3',\n       'PAY_0_DV-1', 'PAY_0_DV0', 'PAY_0_DV1', 'PAY_0_DV2',
+      'PAY_0_DV3',\n       'PAY_0_DV4', 'PAY_0_DV5', 'PAY_0_DV6', 'PAY_0_DV7', 'PAY_0_DV8',\n\
+      \       'PAY_2_DV-1', 'PAY_2_DV0', 'PAY_2_DV1', 'PAY_2_DV2', 'PAY_2_DV3',\n\
+      \       'PAY_2_DV4', 'PAY_2_DV5', 'PAY_2_DV6', 'PAY_2_DV7', 'PAY_2_DV8',\n \
+      \      'PAY_3_DV-1', 'PAY_3_DV0', 'PAY_3_DV1', 'PAY_3_DV2', 'PAY_3_DV3',\n \
+      \      'PAY_3_DV4', 'PAY_3_DV5', 'PAY_3_DV6', 'PAY_3_DV7', 'PAY_3_DV8',\n  \
+      \     'PAY_4_DV-1', 'PAY_4_DV0', 'PAY_4_DV1', 'PAY_4_DV2', 'PAY_4_DV3',\n  \
+      \     'PAY_4_DV4', 'PAY_4_DV5', 'PAY_4_DV6', 'PAY_4_DV7', 'PAY_4_DV8',\n   \
+      \    'PAY_5_DV-1', 'PAY_5_DV0', 'PAY_5_DV2', 'PAY_5_DV3', 'PAY_5_DV4',\n   \
+      \    'PAY_5_DV5', 'PAY_5_DV6', 'PAY_5_DV7', 'PAY_5_DV8', 'PAY_6_DV-1',\n   \
+      \    'PAY_6_DV0', 'PAY_6_DV2', 'PAY_6_DV3', 'PAY_6_DV4', 'PAY_6_DV5',\n    \
+      \   'PAY_6_DV6', 'PAY_6_DV7', 'PAY_6_DV8'],\n      dtype='object')"
 metrics:
 - dvc/test/metrics.json
 - dvc/test-delay-only/metrics.json
