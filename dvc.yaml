@@ -3,16 +3,16 @@ params:
 plots:
 - plots/plots/images
 - dvc/plots/images
+- dvc/test/plots/metrics:
+    x: step
+- dvc/test/plots/images
 - dvc/test-delay-only/plots/metrics:
     x: step
 - dvc/test-delay-only/plots/images
 - dvc/test-delay-num/plots/metrics:
     x: step
 - dvc/test-delay-num/plots/images
-- dvc/test/plots/metrics:
-    x: step
-- dvc/test/plots/images
 metrics:
+- dvc/test/metrics.json
 - dvc/test-delay-only/metrics.json
 - dvc/test-delay-num/metrics.json
-- dvc/test/metrics.json
