@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
         model_path = f"{live.dir}/model.pkl"
         joblib.dump(model, model_path)
-        joblib.dump(x_cols, f"{live.dir}/x_cols.pkl")
+        joblib.dump(dummy_cols_pay_delay, f"{live.dir}/x_cols.pkl")
 
     # Test model with delay info
     with Live(dir="dvc/test-delay-only") as live:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
 
         model_path = f"{live.dir}/model.pkl"
         joblib.dump(model, model_path)
-        joblib.dump(x_cols, f"{live.dir}/x_cols.pkl")
+        joblib.dump(dummy_train_x.columns.to_list(), f"{live.dir}/x_cols.pkl")
 
     # Test model with dummy variables * num cols
     with Live(dir="dvc/test-delay-num") as live:
